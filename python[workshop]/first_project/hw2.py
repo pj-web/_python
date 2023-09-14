@@ -1,14 +1,15 @@
-num_products = int(input("Сколько продуктов вы можете унести из магазина? "))
+# Секретное послание
+secret_letter = [['DFВsjl24sfFFяВАДОd24fssflj234'], ['asdfFп234рFFdо24с$#afdFFтasfо'],
+                 ['оafбasdf%^о^FFжа$#af243ю'], ['afпFsfайFтFsfо13н'],
+                 ['fн13Fа1234де123юsdсsfь'], ['чFFтF#Fsfsdf$$о'],
+                 ['и$##sfF'], ['вSFSDам'], ['пSFоsfнрSDFаSFвSDF$иFFтsfaсSFя'],
+                 ['FFэasdfтDFsfоasdfFт'], ['FяDSFзFFsыSfкFFf']]
 
-shopping_list = []
+# Список с маленькими русскими буквами
+small_rus = ['а', 'б', 'в', 'г', 'д', 'е', 'ё', 'ж', 'з', 'и',
+             'й', 'к', 'л', 'м', 'н', 'о', 'п', 'р', 'с', 'т', 'у', 'ф',
+             'х', 'ц', 'ч', 'ш', 'щ', 'ъ', 'ы', 'ь', 'э', 'ю', 'я']
 
-for i in range(num_products):
-    product = input("Введите наименование продукта: ").lower()
-    if product in shopping_list:
-        print(f"Продукт {product} уже есть в списке!")
-    else:
-        shopping_list.append(product)
+# Вот что у меня получилось
 
-print("Список покупок:")
-for product in shopping_list:
-    print(f"- {product}")
+# ВВЕДИТЕ ТУТ ВАШ КОД
