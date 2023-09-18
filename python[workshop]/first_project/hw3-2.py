@@ -57,59 +57,41 @@ proverbs = [
 ]
 
 variants = [
-    'кот',
-    'шеф',
-    'мозг',
-    'лес',
-    'фолк',
-    'код',
-    'рот',
-    'мёд',
-    'лук',
-    'лес',
-    'год',
-    'час',
-    'друг',
-    'жена',
-    'муж',
-    'айфон',
-    'работа',
+    'кот', 'шеф', 'мозг', 'лес', 'фолк', 'код',
+    'рот', 'мёд', 'лук', 'лес', 'год', 'час', 'друг',
+    'жена', 'муж', 'айфон', 'работа',
+    'кофе', 'стол', 'машина', 'книга',
+    'цветок', 'дом', 'солнце', 'море',
+    'яблоко', 'ручка', 'пальто', 'дерево',
+    'кот', 'собака', 'велосипед', 'телефон',
+    'сумка', 'часы', 'ресторан', 'ключ', 'город',
+    'океан', 'бумага', 'картинка', 'гитара', 'скрипка',
+    'парк', 'чашка', 'монитор', 'мяч', 'тарелка', 'компьютер',
+    'пальто', 'шляпа', 'роза', 'платье', 'бассейн', 'шоколад',
+    'свитер', 'стул', 'зонт', 'помидор'
 ]
 
 how_many_proverbs = int(input('Сколько пословиц вы хотите получить? '))
+
+random_proverbs = set(proverbs)
+random_variants = set(variants)
+random_proverbs_list = []
+random_variants_list = []
 result_list = []
 
-random_variants = []
-
-# variants_set = set(variants)
-
-# for variant in variants:
-#     random_variants = set(variants).pop()
-#     print(random_variants)
-
-
-i = 0
-while i < how_many_proverbs:
-    random_variants.append(set(variants).pop())
-    i += 1
-    print(random_variants)
-
-
-random_proverbs = set()
-
-# i = 0
-# while i < how_many_proverbs:
-#     random_proverbs.add(proverbs.pop())
-#     i += 1
-#     print(random_proverbs)
-#
-# for random_proverb in random_proverbs:
-#     result = random_proverb.replace('Ум', 'MYMYMY')
-#     print(result)
-    # result_list.append(random_proverbs)
-
-
-# result_proverb = random_proverbs[1].replace('Ум', random_variant)
-# print(random_proverbs)
-# print(result_list)
+# поверяем, чтобы введенное число не было больше количества пословиц в списке
+if how_many_proverbs <= len(proverbs):
+    i = 0
+    while i < how_many_proverbs:
+        # получаем случайный элемент из списка пословиц
+        random_proverbs_list.append(random_proverbs.pop())
+        # получаем случайный элемент из списка вариантов замены
+        random_variants_list.append(random_variants.pop())
+        # добавляем в итоговый список пословицу с замененным словом "ум" на случайное существительное, добытое ранее
+        result_list.append(random_proverbs_list[i].replace('Ум', random_variants_list[i]).capitalize())
+        # выводим результат
+        print(result_list[i])
+        i += 1
+else:
+    print(f'У нас есть только {len(proverbs)} пословиц :(')
 
